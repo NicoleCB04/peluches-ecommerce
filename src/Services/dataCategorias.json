@@ -1,0 +1,107 @@
+{
+    "code": 7,
+    "result": "Consulta exitosa de las categorias.",
+    "details": "",
+    "validationDetails": null,
+    "data": [
+        {
+            "idCategoria": 1,
+            "descripcion": "ANIMALITOS",
+            "archivoImagen": "",
+            "linkImagen": "",
+            "activo": true,
+            "subCategorias": [
+                {
+                    "idSubCategoria": 1,
+                    "descripcion": "Osos",
+                    "archivoImagen": "",
+                    "linkImagen": ""
+                },
+                {
+                    "idSubCategoria": 2,
+                    "descripcion": "Perros",
+                    "archivoImagen": "",
+                    "linkImagen": ""
+                },
+                {
+                    "idSubCategoria": 3,
+                    "descripcion": "Felinos",
+                    "archivoImagen": "",
+                    "linkImagen": ""
+                },
+                {
+                    "idSubCategoria": 4,
+                    "descripcion": "Otros",
+                    "archivoImagen": "",
+                    "linkImagen": ""
+                }
+            ]
+        },
+        {
+            "idCategoria": 3,
+            "descripcion": "DIAS FESTIVOS",
+            "archivoImagen": "",
+            "linkImagen": "",
+            "activo": true,
+            "subCategorias": [
+                {
+                    "idSubCategoria": 8,
+                    "descripcion": "Dia del Amor",
+                    "archivoImagen": "",
+                    "linkImagen": ""
+                },
+                {
+                    "idSubCategoria": 9,
+                    "descripcion": "Dia de la Madre",
+                    "archivoImagen": "",
+                    "linkImagen": ""
+                },
+                {
+                    "idSubCategoria": 10,
+                    "descripcion": "Dia del Padre",
+                    "archivoImagen": "",
+                    "linkImagen": ""
+                },
+                {
+                    "idSubCategoria": 11,
+                    "descripcion": "Cumpleaños",
+                    "archivoImagen": "",
+                    "linkImagen": ""
+                },
+                {
+                    "idSubCategoria": 12,
+                    "descripcion": "Navidad",
+                    "archivoImagen": "",
+                    "linkImagen": ""
+                }
+            ]
+        },
+        {
+            "idCategoria": 2,
+            "descripcion": "PERSONAJES",
+            "archivoImagen": "",
+            "linkImagen": "",
+            "activo": true,
+            "subCategorias": [
+                {
+                    "idSubCategoria": 5,
+                    "descripcion": "Super Héroes",
+                    "archivoImagen": "",
+                    "linkImagen": ""
+                },
+                {
+                    "idSubCategoria": 6,
+                    "descripcion": "Disney",
+                    "archivoImagen": "",
+                    "linkImagen": ""
+                },
+                {
+                    "idSubCategoria": 7,
+                    "descripcion": "Otros",
+                    "archivoImagen": "",
+                    "linkImagen": ""
+                }
+            ]
+        }
+    ]
+}
