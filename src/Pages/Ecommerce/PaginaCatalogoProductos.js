@@ -16,7 +16,7 @@ class PaginaCatalogoProductos extends Component{
                                 <BuscadorProductos/>
                             </div>
                             <div class="col-md-9">
-                                <ListaProductos/>
+                                <ListaProductos tagSearch = "BuscaPorDescripcion" firstSearchId = "1" secondSearchId = "0" keyword = "oso"/>
                             </div>
 
                         </div>
