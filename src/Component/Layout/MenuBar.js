@@ -5,7 +5,7 @@ import imageHeader from '../../Assets/Images/shop/header-img.jpg'
 class MenuBar extends Component{
     render() {
         return (
-            <section class="menu">            
+            <section className="menu">            
                 <nav className="navbar navigation">
                     <div className="container">
                         <div className="navbar-header">

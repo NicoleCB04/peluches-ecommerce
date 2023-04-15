@@ -1,18 +1,19 @@
 import { Component } from "react";
+import { Link } from "react-router-dom";
 
 
 class CabeceraPagina extends Component{
     render() {
         return (
-            <section class="page-header">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="content">
-                                <h1 class="page-name">Productos</h1>
-                                <ol class="breadcrumb">
-                                    <li><a href="#">Inicio</a></li>
-                                    <li class="active">Productos</li>
+            <section className="page-header">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-12">
+                            <div className="content">
+                                <h1 className="page-name">Productos</h1>
+                                <ol className="breadcrumb">
+                                    <li><Link to={'/'}>Inicio</Link></li>    
+                                    <li className="active">Productos</li>
                                 </ol>
                             </div>
                         </div>

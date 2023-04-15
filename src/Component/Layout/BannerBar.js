@@ -12,7 +12,7 @@ class BannerBar extends Component{
      
         return (
 
-            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <div id="carousel-example-generic" className="carousel slide" data-ride="carousel">
                     <ol className="carousel-indicators">
                         <li data-target="#carousel-example-generic" data-slide-to="0" className="active"></li>
                         <li data-target="#carousel-example-generic" data-slide-to="1"></li>
@@ -22,26 +22,26 @@ class BannerBar extends Component{
                     <div className="carousel-inner" role="listbox">
                         <div className="item active">
                             <img src={primerSlider} alt="..." />
-                            <div class="carousel-caption">
+                            <div className="carousel-caption">
                                 <p>PRODUCTOS</p>                            
                                 <h3>La belleza de la naturaleza <br/> está escondido en los detalles.</h3>
-                                <a class="btn btn-info" href="#">Compra Ahora</a>
+                                <a className="btn btn-info" href="#">Compra Ahora</a>
                             </div>                        
                         </div>
                         <div className="item">
                             <img src={segundoSlider} alt="..." />      
-                            <div class="carousel-caption">
+                            <div className="carousel-caption">
                                 <p>PRODUCTOS</p>
                                 <h3>La belleza de la naturaleza <br /> está escondido en los detalles.</h3>
-                                <a class="btn btn-info" href="#">Compra Ahora</a>
+                                <a className="btn btn-info" href="#">Compra Ahora</a>
                             </div>                           
                         </div>
                         <div className="item">
                         <img src={tercerSlider} alt="..." />
-                            <div class="carousel-caption">
+                            <div className="carousel-caption">
                                 <p>PRODUCTOS</p>
                                 <h3>La belleza de la naturaleza <br /> está escondido en los detalles.</h3>
-                                <a class="btn btn-info" href="#">Compra Ahora</a>
+                                <a className="btn btn-info" href="#">Compra Ahora</a>
                             </div>                           
                         </div>                        
                     </div>

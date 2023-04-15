@@ -2,21 +2,60 @@ import { Component } from "react";
 
 
 class SubCategoriasPorCategoria extends Component{
+
+    
     render(){
+        const {idParameter, parameter, subParameters, hadlerSearchProducts} = this.props;
+
+        const getParameterSearch = (idParameter, idSubParameter) => {
+            let parameterSearch = {tagSearch:'', firstSearchId:0, secondSearchId:0, keyword:'all'};            
+            switch (idParameter) {
+                case 1:
+                case 99:                    
+                    parameterSearch.tagSearch = 'CategoriaYSubCategoria';
+                    parameterSearch.firstSearchId = idParameter;
+                    parameterSearch.secondSearchId = idSubParameter;
+                    break;
+                case 100: 
+                    parameterSearch.tagSearch = 'Marcas';
+                    parameterSearch.firstSearchId = idSubParameter;
+                    break;                           
+                case 101: 
+                    parameterSearch.tagSearch = 'Dimensiones';
+                    parameterSearch.firstSearchId = idSubParameter;
+                    break;                    
+                default:
+                    parameterSearch.tagSearch = 'BuscaPorDescripcion';
+                    break;
+            }
+            
+            return parameterSearch;
+        }
+
         return (
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id={`heading${this.props.nombreCategoria.replace(/\s+/g, '')}`}>
-                    <h4 class="panel-title">
-                        <a role="button" data-toggle="collapse" data-parent="#accordion" href={`#collapse${this.props.nombreCategoria.replace(/\s+/g, '')}`} aria-expanded="true" aria-controls={`collapse${this.props.nombreCategoria.replace(/\s+/g, '')}`}>
-                            {this.props.nombreCategoria}
+            <div className="panel panel-default">
+                <div className="panel-heading" role="tab" id={`heading${parameter.replace(/\s+/g, '')}`}>
+                    <h4 className="panel-title">
+                        <a role="button" 
+                                data-toggle="collapse" 
+                                data-parent="#accordion" 
+                                href={`#collapse${parameter.replace(/\s+/g, '')}`} 
+                                aria-expanded="true" 
+                                aria-controls={`collapse${parameter.replace(/\s+/g, '')}`}
+                                key={idParameter}>
+                            {parameter}
                         </a>
                     </h4>
                 </div>
-                <div id={`collapse${this.props.nombreCategoria.replace(/\s+/g, '')}`} class="panel-collapse collapse in" role="tabpanel" aria-labelledby={`heading${this.props.nombreCategoria.replace(/\s+/g, '')}`}>
-                    <div class="panel-body">
+                <div id={`collapse${parameter.replace(/\s+/g, '')}`} 
+                        className="panel-collapse collapse in" 
+                        role="tabpanel" 
+                        aria-labelledby={`heading${parameter.replace(/\s+/g, '')}`}>
+                    <div className="panel-body">
                         <ul>
-                            {this.props.subCategorias.map(sc => 
-                                <li key={sc.idHijo}><a href="#!">{sc.hijo}</a></li>                            
+                            {                                 
+                                subParameters.map(sc =>                              
+                                    <li key={`${idParameter}-${sc.idHijo}`}><a href="#!" onClick={() => hadlerSearchProducts(getParameterSearch(idParameter, sc.idHijo))}>{sc.hijo}</a></li>                            
                             )}
                         </ul>
                     </div>

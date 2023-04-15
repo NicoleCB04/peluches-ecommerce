@@ -1,4 +1,6 @@
+import PaginaCarroCompras from "../Pages/Ecommerce/PaginaCarroCompras";
 import PaginaCatalogoProductos from "../Pages/Ecommerce/PaginaCatalogoProductos";
+import PaginaDetalleProducto from "../Pages/Ecommerce/PaginaDetalleProducto";
 import PaginaInicio from "../Pages/Ecommerce/PaginaInicio";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -18,7 +20,15 @@ const rutas = createBrowserRouter(
                 {
                     path: 'catalogo',
                     element: <PaginaCatalogoProductos />
-                }            
+                },            
+                {
+                    path: 'detalleProducto/:idProducto',
+                    element: <PaginaDetalleProducto />
+                },
+                {
+                    path: 'carrito',
+                    element: <PaginaCarroCompras />
+                },                                 
             ]
         }   
     ]);

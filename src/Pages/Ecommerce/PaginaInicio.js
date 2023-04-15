@@ -5,22 +5,48 @@ import BannerBar from "../../Component/Layout/BannerBar";
 import RedSocial from "../../Component/RedSociales/RedSocial";
 import Suscripcion from "../../Component/Suscripciones/Suscripcion";
 
+import { getProducts } from "../../Services/Productos";
 
 
 class PaginaInicio extends Component{
+    constructor(props){
+        super(props);
+
+        this.state = {
+            productsData: [],
+            isFetchproducts: true,
+        }        
+    }
+
+    async componentDidMount(){
+        const products = await getProducts("BuscaPorDescripcion", "1", "0", "oso");
+
+        this.setState(
+        {
+            productsData: products.data,
+            isFetchproducts: false,
+        })
+    }    
+
     render() {
+        const {isFetchproducts, productsData} = this.state;
+
+        if(isFetchproducts){
+            return 'Cargando...';
+        }
+
         return (
             <>
                 <BannerBar/>
                 <ListaCategorias />
-                <section class="products section bg-gray">
-                    <div class="container">
-                        <div class="row">
-                            <div class="title text-center">
+                <section className="products section bg-gray">
+                    <div className="container">
+                        <div className="row">
+                            <div className="title text-center">
                                 <h2>Productos de Moda</h2>
                             </div>
                         </div>
-                        <ListaProductos/>
+                        <ListaProductos productsData={productsData} columnWidth="4" numberElements="all"/>
                     </div>
                 </section>
                 <Suscripcion />

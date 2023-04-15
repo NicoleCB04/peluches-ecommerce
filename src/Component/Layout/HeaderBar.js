@@ -7,7 +7,7 @@ class HeaderBar extends Component{
 
     render() {
         return (
-            <section class="top-header">            
+            <section className="top-header">            
                 <div className="container">
                     <div className="row">
                         <div className="col-md-4 col-xs-12 col-sm-4">

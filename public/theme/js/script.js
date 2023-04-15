@@ -18,7 +18,7 @@
   
   // Instagram Feed
   if (($('#instafeed').length) !== 0) {
-    var accessToken = $('#instafeed').attr('data-accessToken');
+    var accessToken = $('#instafeed').attr('data-accesstoken');
     var userFeed = new Instafeed({
       get: 'user',
       resolution: 'low_resolution',

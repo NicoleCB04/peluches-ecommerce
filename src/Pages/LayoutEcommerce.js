@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import Footer from "../Component/Layout/Footer";
 import HeaderBar from "../Component/Layout/HeaderBar";
 import MenuBar from "../Component/Layout/MenuBar";
+import { CarritoProvider } from "../Context/CarritoContext";
 
 
 class LayoutEcommerce extends Component{
@@ -10,14 +11,16 @@ class LayoutEcommerce extends Component{
     render() {
         return (
             <>
-                <HeaderBar/>
-                <MenuBar />
-                
-                <div>
-                    <Outlet />
-                </div>
-                
-                <Footer />
+                <CarritoProvider>
+                    <HeaderBar/>
+                    <MenuBar />
+                    
+                    <div>
+                        <Outlet />
+                    </div>
+                    
+                    <Footer />
+                </CarritoProvider>
             </>
         );
     }

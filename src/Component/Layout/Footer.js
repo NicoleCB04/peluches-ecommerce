@@ -4,33 +4,33 @@ import { Component } from "react";
 class Footer extends Component{
     render() {
         return (
-            <footer class="footer section text-center">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <ul class="social-media">
+            <footer className="footer section text-center">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-12">
+                            <ul className="social-media">
                                 <li>
                                     <a href="https://www.facebook.com/profile.php?id=100090478615170">
-                                        <i class="tf-ion-social-facebook"></i>
+                                        <i className="tf-ion-social-facebook"></i>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="https://www.instagram.com/elchino_peluches/">
-                                        <i class="tf-ion-social-instagram"></i>
+                                        <i className="tf-ion-social-instagram"></i>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="https://twitter.com/ElChinoPeluches">
-                                        <i class="tf-ion-social-twitter"></i>
+                                        <i className="tf-ion-social-twitter"></i>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="https://www.pinterest.com/pelucheselchino/">
-                                        <i class="tf-ion-social-pinterest"></i>
+                                        <i className="tf-ion-social-pinterest"></i>
                                     </a>
                                 </li>
                             </ul>
-                            <ul class="footer-menu text-uppercase">
+                            <ul className="footer-menu text-uppercase">
                                 <li>
                                     <a href="contact.html">Contáctenos</a>
                                 </li>
@@ -44,7 +44,7 @@ class Footer extends Component{
                                     <a href="contact.html">Políticas de Privacidad</a>
                                 </li>
                             </ul>
-                            <p class="copyright-text">Copyright &copy;2023, Designed &amp; Developed by <a href="https://themefisher.com/">IDAT students</a></p>
+                            <p className="copyright-text">Copyright &copy;2023, Designed &amp; Developed by <a href="https://themefisher.com/">IDAT students</a></p>
                         </div>
                     </div>
                 </div>
