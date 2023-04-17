@@ -1,22 +1,42 @@
 import { createContext, useState } from "react";
+// import { useNavigate } from "react-router-dom";
 
 const CarritoContext = createContext();
-const shoppingCartTemplate = {
-    head:{}, 
-    details:[]
-}
+// const shoppingCartTemplate = {
+//     head:{}, 
+//     details:[]
+// }
 
 const CarritoProvider = ({children}) => {
-    const [shoppingCart, setShoppingCart] = useState(shoppingCartTemplate);
+    const [shoppingCart, setShoppingCart] = useState({ head:{}, details:[] });
+    const [productDetails, setProductDetails ] = useState({
+        idProducto: 0, 
+        nombreProducto: '', 
+        linkImagen: '', 
+        precioVenta: 0, 
+        descripcion: ''
+    });
+    // const navigate = useNavigate();
 
     const handleShoppingCart = (itemShoppingCart) => {
         console.log(itemShoppingCart);
 
-        shoppingCartTemplate.details.push(itemShoppingCart);
-        setShoppingCart({shoppingCartTemplate});
+        shoppingCart.details.push(itemShoppingCart);
+
+        var shoCart = { head:{}, details : shoppingCart.details}
+          
+        setShoppingCart(shoCart);
+
+        console.log(shoCart);        
+
+        // navigate('/carrito');
     }
 
-    const data = {shoppingCart, handleShoppingCart};
+    const handleModaProductDetails = (product) => {
+        setProductDetails(product);
+    }
+
+    const data = {shoppingCart, productDetails, handleShoppingCart, handleModaProductDetails};
 
     return <CarritoContext.Provider value={data}>{children}</CarritoContext.Provider>;
 }

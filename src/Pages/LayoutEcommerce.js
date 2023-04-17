@@ -10,7 +10,7 @@ class LayoutEcommerce extends Component{
 
     render() {
         return (
-            <>
+     
                 <CarritoProvider>
                     <HeaderBar/>
                     <MenuBar />
@@ -21,7 +21,7 @@ class LayoutEcommerce extends Component{
                     
                     <Footer />
                 </CarritoProvider>
-            </>
+          
         );
     }
 }

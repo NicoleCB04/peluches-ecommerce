@@ -88,7 +88,7 @@ export default function DetalleProducto({product}) {
 
                         <div className="col-md-7">
                             <div className="single-product-details">
-                                <h2>{product.nombreProducto}</h2>
+                                <h2>{shoppingCart.nombreProducto}</h2>
                                 <p className="product-price">S/ {product.precioVenta}</p>
 
                                 <p className="product-description mt-20">
@@ -140,7 +140,7 @@ export default function DetalleProducto({product}) {
                                         <li><a href="product-single.html">{product.categoria}</a></li>
                                     </ul>
                                 </div>
-                                <a href="#" className="btn btn-main mt-20" onClick={() => handleShoppingCart(product)}>Agregar al Carrito</a>
+                                <Link to={'/carrito'} className="btn btn-main mt-20" onClick={() => handleShoppingCart(product)}>Agregar al Carrito</Link>
                             </div>
                         </div>
                     </div>

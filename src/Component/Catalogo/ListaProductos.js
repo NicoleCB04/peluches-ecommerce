@@ -1,44 +1,71 @@
-import { Component } from "react";
+import { useContext } from "react";
 import CardProducto from "../Producto/CardProducto";
-import ModalSeleccionProducto from "./ModalSeleccionProducto";
+// import ModalSeleccionProducto from "./ModalSeleccionProducto";
+import CarritoContext from "../../Context/CarritoContext";
+import Modal from "../Modals/Modal";
+import { useModal } from "../../Hooks/useModal";
+import { Link } from "react-router-dom";
 
+export default function ListaProductos({productsData, columnWidth, numberElements}) {
+    const { productDetails, handleModaProductDetails }  = useContext(CarritoContext) 
+    const [isOpenModalProductDetail, openModalProductDetail, closeModalProductDetail] = useModal(false); 
 
-class ListaProductos extends Component{
+    const viewModalProduct = (productView) => {
+        handleModaProductDetails(productView);        
+        openModalProductDetail();
+    }
 
-    render() {
-        const {productsData, columnWidth, numberElements} = this.props;
-
-        return (
-            <div className="row">
-                {
-                    productsData.map((producto, indice) => {
-                        if(numberElements === "all"){
+    return (
+        <div className="row">
+            {
+                productsData.map((producto, indice) => {
+                    if(numberElements === "all"){
+                        return <CardProducto idProducto={producto.idProducto}
+                                            nombre={producto.nombreProducto}
+                                            descripcion={producto.descripcion }
+                                            urlImagen={producto.urlImagen} 
+                                            precio={producto.precioVenta} 
+                                            columnas={columnWidth}
+                                            viewModalProduct={viewModalProduct}
+                                            key={producto.idProducto}/>                           
+                    }else{
+                        if((indice + 1) <= numberElements){
                             return <CardProducto idProducto={producto.idProducto}
                                                 nombre={producto.nombreProducto}
                                                 descripcion={producto.descripcion }
                                                 urlImagen={producto.urlImagen} 
                                                 precio={producto.precioVenta} 
                                                 columnas={columnWidth}
-                                                key={producto.idProducto}/>                           
-                        }else{
-                            if((indice + 1) <= numberElements){
-                                return <CardProducto idProducto={producto.idProducto}
-                                                    nombre={producto.nombreProducto}
-                                                    descripcion={producto.descripcion }
-                                                    urlImagen={producto.urlImagen} 
-                                                    precio={producto.precioVenta} 
-                                                    columnas={columnWidth}
-                                                    key={producto.idProducto}/>   
-                            } 
-                        }                                                                            
-                    })
-                }
+                                                viewModalProduct={viewModalProduct}                                                
+                                                key={producto.idProducto}/>   
+                        } 
+                    }                                                                            
+                })
+            }
 
-                <ModalSeleccionProducto/>
-            </div>
-        );
-    }
+            <Modal isOpen={isOpenModalProductDetail} closeModal={closeModalProductDetail}>
+                <div className="row">
+                    <div className="col-md-8 col-sm-6 col-xs-12">
+                        <div className="modal-image">
+                            <img className="img-responsive" src={productDetails.linkImagen}
+                                alt="product-img" />
+                        </div>
+                    </div>
+                    <div className="col-md-4 col-sm-6 col-xs-12">
+                        <div className="product-short-details">
+                            <h2 className="product-title">{productDetails.nombreProducto}</h2>
+                            <p className="product-price">S/ {productDetails.precioVenta}</p>
+                            <p className="product-short-description">
+                                {productDetails.descripcion}
+                            </p>
+                            <a href="/Ecommerce/CarroCompras" className="btn btn-main">Agregar al Carrito</a>
+                            <Link to={`/detalleProducto/${productDetails.idProducto}`}                                
+                                className="btn btn-transparent">Ver detalles del Producto</Link>
+                        </div>
+                    </div>
+                </div>                
+            </Modal>
+            {/* <ModalSeleccionProducto/> */}
+        </div>
+    );
 }
-
-
-export default ListaProductos;
