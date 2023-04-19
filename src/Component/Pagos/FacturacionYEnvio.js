@@ -1,35 +1,89 @@
+import './EnvioYPago.css'
 
 export default function FacturacionYEnvio() {
 
     return (
         <>
             <div className="block billing-details">
-                <h4 className="widget-title">Detalles Facturación</h4>
+                <h4 className="widget-title">Identificación</h4>
                 <div className="checkout-form">
                     <div className="form-group">
-                        <label for="full_name">Nombre Completo</label>
+                        <label for="full_name">Correo</label>
                         <input type="text" className="form-control" id="full_name" placeholder=""/>
-                    </div>
-                    <div className="form-group">
-                        <label for="user_address">Dirección</label>
-                        <input type="text" className="form-control" id="user_address" placeholder=""/>
                     </div>
                     <div className="checkout-country-code clearfix">
                         <div className="form-group">
-                            <label for="user_post_code">Código Postal</label>
-                            <input type="text" className="form-control" id="user_post_code" name="zipcode" defaultValue=""/>
+                            <label for="user_post_code">Nombre</label>
+                            <input type="text" className="form-control" id="user_post_code" name="zipcode" defaultValue="" />
                         </div>
                         <div className="form-group">
-                            <label for="user_city">Ciudad</label>
-                            <input type="text" className="form-control" id="user_city" name="city" defaultValue=""/>
+                            <label for="user_city">Apellidos</label>
+                            <input type="text" className="form-control" id="user_city" name="city" defaultValue="" />
+                        </div>
+                    </div>           
+                    <div className="checkout-country-code clearfix">
+                        <div className="form-group">
+                            <label for="full_name">Tipo Identificación</label>
+                            <select className="form-control" id="user_post_code">
+                                <option>Documento Nacional Identidad</option>
+                                <option>Carnet Extranjeria</option>
+                                <option>Registro Unico de Contribuyente</option>
+                            </select>
+                        </div>  
+                        <div className="form-group">
+                            <label for="user_post_code">Documento Identidad</label>
+                            <input type="text" className="form-control" id="user_post_code" name="zipcode" defaultValue="" />
+                        </div>                        
+                    </div>     
+                    <div className="form-group">
+                        <label for="user_city">Teléfono / Móvil</label>
+                        <input type="text" className="form-control" id="user_city" name="city" defaultValue="" />
+                    </div>                                     
+                </div>
+            </div>
+            <div className="block billing-details">
+                <h4 className="widget-title">Datos para la entrega</h4>
+                <div className="checkout-form">
+                    <div className="form-group">
+                        <label for="full_name">Dirección</label>
+                        <input type="text" className="form-control" id="full_name" placeholder="" />
+                    </div>
+                    <div className="checkout-country-code clearfix">
+                        <div className="form-group">
+                            <label for="full_name">Distrito</label>
+                            <select className="form-control" id="user_post_code">
+                                <option>Puente Piedra</option>
+                                <option>Ancon</option>
+                                <option>Ventanilla</option>
+                                <option>Lima</option>                                
+                            </select>
+                        </div>  
+                        <div className="form-group">
+                            <label for="user_city">Número (Opcional)</label>
+                            <input type="text" className="form-control" id="user_city" name="city" defaultValue="" />
                         </div>
                     </div>
                     <div className="form-group">
-                        <label for="user_country">País</label>
-                        <input type="text" className="form-control" id="user_country" placeholder=""/>
+                        <label for="user_country">Referencia (Opcional)</label>
+                        <input type="text" className="form-control" id="user_country" placeholder="" />
                     </div>
+                    <p>Selecciona tu método de entrega: </p>
+              
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="b"/>
+                            <label class="form-check-label" for="exampleRadios2">
+                                B
+                            </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="b" />
+                        <label class="form-check-label" for="exampleRadios2">
+                            B
+                        </label>
+                    </div>               
+
                 </div>
-            </div>
+            </div>            
             <div className="block">
                 <h4 className="widget-title">Método de Pago</h4>
                 <p>Datos de Tarjeta de Crédito (Pago seguro)</p>

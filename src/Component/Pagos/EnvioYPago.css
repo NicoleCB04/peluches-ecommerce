@@ -1,0 +1,13 @@
+.checkout-form .form-group select {
+    box-shadow: none;
+    outline: none;
+    font-weight: 200;
+    font-size: 12px;
+
+    border-radius: 0;
+    display: block;
+    padding: 6px 10px 5px 100px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    height: 50px;
+}
