@@ -2,6 +2,7 @@ import PaginaCarroCompras from "../Pages/Ecommerce/PaginaCarroCompras";
 import PaginaCatalogoProductos from "../Pages/Ecommerce/PaginaCatalogoProductos";
 import PaginaDetalleProducto from "../Pages/Ecommerce/PaginaDetalleProducto";
 import PaginaInicio from "../Pages/Ecommerce/PaginaInicio";
+import PaginaPagarCompra from "../Pages/Ecommerce/PaginaPagarCompra";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: LayoutEcommerce } = require("../Pages/LayoutEcommerce");
@@ -28,7 +29,11 @@ const rutas = createBrowserRouter(
                 {
                     path: 'carrito',
                     element: <PaginaCarroCompras />
-                },                                 
+                },
+                {
+                    path: 'pagos',
+                    element: <PaginaPagarCompra />
+                },                                                     
             ]
         }   
     ]);

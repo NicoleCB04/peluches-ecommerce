@@ -4,7 +4,7 @@ import CarritoContext from "../../Context/CarritoContext";
 
 
 export default function DetalleProducto({product}) {
-    const {shoppingCart, handleShoppingCart} = useContext(CarritoContext)
+    const { handleAddShoppingCart} = useContext(CarritoContext)
 
     return(
             <section className="single-product">
@@ -88,7 +88,7 @@ export default function DetalleProducto({product}) {
 
                         <div className="col-md-7">
                             <div className="single-product-details">
-                                <h2>{shoppingCart.nombreProducto}</h2>
+                                <h2>{product.nombreProducto}</h2>
                                 <p className="product-price">S/ {product.precioVenta}</p>
 
                                 <p className="product-description mt-20">
@@ -125,7 +125,7 @@ export default function DetalleProducto({product}) {
                                                 <button className="btn btn-default bootstrap-touchspin-down" type="button">-</button>
                                             </span>
 
-                                            <input id="product-quantity" type="text" defaultValue="0" name="product-quantity" className="form-control"/>
+                                            <input id="product-quantity" type="text" defaultValue="1" name="product-quantity" className="form-control"/>
 
                                             <span className="input-group-btn">
                                                 <button className="btn btn-default bootstrap-touchspin-up" type="button">+</button>
@@ -140,7 +140,22 @@ export default function DetalleProducto({product}) {
                                         <li><a href="product-single.html">{product.categoria}</a></li>
                                     </ul>
                                 </div>
-                                <Link to={'/carrito'} className="btn btn-main mt-20" onClick={() => handleShoppingCart(product)}>Agregar al Carrito</Link>
+                                <Link to={'/carrito'} 
+                                        className="btn btn-main mt-20" 
+                                        onClick={() => handleAddShoppingCart({cargo: 0}, {                                           
+                                            idProducto: product.idProducto,
+                                            descripcionProducto: product.nombreProducto,
+                                            urlImagen: product.urlImagen,
+                                            precio: product.precioVenta,
+                                            cantidad: 1,
+                                            enPromocion: false,
+                                            descuento: 0,
+                                            subTotal:0,
+                                            total: 0,
+                                            activo: true        
+                                        })}>
+                                            Agregar al Carrito
+                                </Link>
                             </div>
                         </div>
                     </div>

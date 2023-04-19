@@ -50,7 +50,7 @@ class PaginaCatalogoProductos extends Component{
 
         return (
             <>
-                <CabeceraPagina />
+                <CabeceraPagina currentMenu="Productos"/>
                 <section className="products section">
                     <div className="container">
                         <div className="row">

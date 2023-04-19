@@ -2,6 +2,7 @@ import { Component } from "react";
 
 import iguana from '../../Assets/Images/shop/cart/cart-1.jpg'
 import jirafa from '../../Assets/Images/shop/cart/cart-2.jpg'
+import CardNavCarrito from "../Carrito/CardNavCarrito";
 
 class HeaderBar extends Component{
 
@@ -38,53 +39,7 @@ class HeaderBar extends Component{
                         <div className="col-md-4 col-xs-12 col-sm-4">
 
                             <ul className="top-menu text-right list-inline">
-                                <li className="dropdown cart-nav dropdown-slide">
-                                    <a href="#!" className="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
-                                        <i className="tf-ion-android-cart"></i>Mi Carrito
-                                    </a>
-                                    <div className="dropdown-menu cart-dropdown">
-
-                                        <div className="media">
-                                            <a className="pull-left" href="#!">
-                                                <img className="media-object" src={iguana} alt="image" />
-                                            </a>
-                                            <div className="media-body">
-                                                <h4 className="media-heading"><a href="#!">Iguanita</a></h4>
-                                                <div className="cart-price">
-                                                    <span>1 x</span>
-                                                    <span>50.00</span>
-                                                </div>
-                                                <h5><strong>S/ 50</strong></h5>
-                                            </div>
-                                            <a href="#!" className="remove"><i className="tf-ion-close"></i></a>
-                                        </div>
-
-                                        <div className="media">
-                                            <a className="pull-left" href="#!">
-                                                <img className="media-object" src={jirafa} alt="image" />
-                                            </a>
-                                            <div className="media-body">
-                                                <h4 className="media-heading"><a href="#!">Jirafa</a></h4>
-                                                <div className="cart-price">
-                                                    <span>1 x</span>
-                                                    <span>50.00</span>
-                                                </div>
-                                                <h5><strong>S/ 50</strong></h5>
-                                            </div>
-                                            <a href="#!" className="remove"><i className="tf-ion-close"></i></a>
-                                        </div>
-
-                                        <div className="cart-summary">
-                                            <span>Total</span>
-                                            <span className="total-price">S/ 100.00</span>
-                                        </div>
-                                        <ul className="text-center cart-buttons">
-                                            <li><a asp-controller="Ecommerce" asp-action="CarroCompras" className="btn btn-small">Ver Carrito</a></li>
-                                            <li><a asp-controller="Ecommerce" asp-action="PagarCompra" className="btn btn-small btn-solid-border">Comprar</a></li>
-                                        </ul>
-                                    </div>
-
-                                </li>
+                                <CardNavCarrito/>
 
                                 <li className="dropdown search dropdown-slide">
                                     <a href="#!" className="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
