@@ -3,6 +3,7 @@ import { Component } from "react";
 import iguana from '../../Assets/Images/shop/cart/cart-1.jpg'
 import jirafa from '../../Assets/Images/shop/cart/cart-2.jpg'
 import CardNavCarrito from "../Carrito/CardNavCarrito";
+import CardNavLogIn from "../LogIn/CardNavLogIn";
 
 class HeaderBar extends Component{
 
@@ -39,8 +40,6 @@ class HeaderBar extends Component{
                         <div className="col-md-4 col-xs-12 col-sm-4">
 
                             <ul className="top-menu text-right list-inline">
-                                <CardNavCarrito/>
-
                                 <li className="dropdown search dropdown-slide">
                                     <a href="#!" className="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
                                         <i className="tf-ion-ios-search-strong"></i> Buscar
@@ -48,21 +47,15 @@ class HeaderBar extends Component{
                                     <ul className="dropdown-menu search-dropdown">
                                         <li>
                                             <form action="post">
-                                                <input type="search" className="form-control" placeholder="Buscar..."/>
+                                                <input type="search" className="form-control" placeholder="Buscar..." />
                                             </form>
                                         </li>
                                     </ul>
-                                </li>
+                                </li>   
 
-                                <li className="commonSelect">
-                                    <select className="form-control">
-                                        <option>EN</option>
-                                        <option>DE</option>
-                                        <option>FR</option>
-                                        <option>ES</option>
-                                    </select>
-                                </li>
+                                <CardNavLogIn/>
 
+                                <CardNavCarrito/>
                             </ul>
                         </div>
                     </div>

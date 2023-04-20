@@ -1,5 +1,5 @@
 import CabeceraPagina from "../../Component/Paginas/CabeceraPagina";
-import FacturacionYEnvio from "../../Component/Pagos/FacturacionYEnvio";
+import EnvioYPago from "../../Component/Pagos/EnvioYPago";
 import ResumenPedido from "../../Component/Pagos/ResumenPedido";
 
 export default function PaginaPagarCompra() {
@@ -12,7 +12,7 @@ export default function PaginaPagarCompra() {
                     <div className="container">
                         <div className="row">
                             <div className="col-md-8">
-                                <FacturacionYEnvio />
+                                <EnvioYPago />
                             </div>
                             <div className="col-md-4">
                                 <ResumenPedido/>

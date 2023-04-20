@@ -1,3 +1,11 @@
+/* a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+} */
+
 .checkout-form .form-group select {
     box-shadow: none;
     outline: none;
@@ -10,4 +18,75 @@
     -moz-appearance: none;
     -webkit-appearance: none;
     height: 50px;
+}
+
+.radio-section {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+}
+
+.radio-list {
+    display: inline-flex;
+    width: 100%; 
+}
+
+.radio-item [type="radio"] {
+    display: none;
+}
+
+.radio-item + .radio-item {
+    margin-top: 0px;
+    padding-inline-start: 5px;
+}
+
+.radio-item label {
+    display: block;
+    padding: 20px 60px;
+    background: black;
+    border: 2px solid rgba(126, 123, 123, 0.1);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 400;
+    min-width: 200px;
+    white-space: nowrap;
+    position: relative;
+    transition: .4s ease-in-out 0s;    
+}
+.radio-item label:after,
+.radio-item label:before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+.radio-item label:after {
+    height: 20px;
+    width: 20px;
+    border: 2px solid white;
+    left: 20px;
+    top: calc(50% - 12px);    
+}
+.radio-item label:before {
+    background-color: white;
+    height: 10px;
+    width: 10px;
+    left: 27px;
+    top: calc(50% - 5px); 
+    transform: scale(5);
+    opacity: 0;
+    visibility: hidden;
+    transition: .4s ease-in-out 0s;
+}
+
+.radio-item [type="radio"]:checked ~ label {
+    border-color: white;
+}
+
+.radio-item [type="radio"]:checked ~ label:before {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
 }
