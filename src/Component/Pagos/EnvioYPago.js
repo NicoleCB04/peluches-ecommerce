@@ -1,6 +1,7 @@
+import RadioButtons from '../Controles/RadioButtons'
 import './EnvioYPago.css'
 
-export default function FacturacionYEnvio() {
+export default function EnvioYPago() {
 
     return (
         <>
@@ -75,18 +76,15 @@ export default function FacturacionYEnvio() {
                     </div>
                     &nbsp;
                     <p>Selecciona tu método de entrega: </p>
-                    <section className="radio-section">
-                        <div className="radio-list">
-                            <div className="radio-item">
-                                <input type="radio" name="radio" id="radio1"/>
-                                <label for="radio1">Retiro en tienda</label>
-                            </div>
-                            <div className="radio-item">
-                                <input type="radio" name="radio" id="radio2"/>
-                                <label for="radio2">Despacho a Domicilio</label>
-                            </div>
-                        </div>
-                    </section>
+                    <RadioButtons element={
+                        {
+                            key: 'tipoEntrega',
+                            items:  
+                            [
+                                {id: 1, value: 'Retiro en tienda'}, 
+                                {id: 2, value: 'Despacho a Domicilio'}
+                            ]
+                        }}/> 
 
                     &nbsp;
                     <p>Escoge la fecha de entrega: </p>
@@ -112,47 +110,30 @@ export default function FacturacionYEnvio() {
                     <div className="payment">
                         <div className="card-details">
                             <div className="checkout-form">
-                                <div className="form-check form-check-inline">
-                                    <input className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios" value="b" />
-                                    <label className="form-check-label" for="exampleRadios">
-                                        Boleta
-                                    </label>
-                                </div>
-                                <div className="form-check form-check-inline">
-                                    <input className="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="b" />
-                                    <label className="form-check-label" for="exampleRadios2">
-                                        Factura
-                                    </label>
-                                </div>
+                            <RadioButtons element={
+                                {
+                                    key: 'tipoDocumento',
+                                    items:  
+                                    [
+                                        {id: 1, value: 'Boleta'}, 
+                                        {id: 2, value: 'Factura'}
+                                    ]
+                                }}/>                               
                                 &nbsp;
-                                <p>Elige un metodo de pago:</p>
-                                <div className="form-check form-check-inline">
-                                    <input className="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="b" />
-                                    <label className="form-check-label" for="exampleRadios2">
-                                        Transferencia Bancaria
-                                    </label>
-                                </div>
-
-                                <div className="form-check form-check-inline">
-                                    <input className="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="b" />
-                                    <label className="form-check-label" for="exampleRadios2">
-                                        BBVA - 0011-0426-0100005960
-                                    </label>
-                                </div>
-                                <div className="form-check form-check-inline">
-                                    <input className="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="b" />
-                                    <label className="form-check-label" for="exampleRadios2">
-                                        BCP  - 193-1853946-0-25
-                                    </label>
-                                </div>
-                                <div className="form-check form-check-inline">
-                                    <input className="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="b" />
-                                    <label className="form-check-label" for="exampleRadios2">
-                                        SBS  - 00-046-021886
-                                    </label>
-                                </div>                                                                                                  
-
-                                <a asp-controller="Ecommerce" asp-action="ConfirmacionPago" className="btn btn-main mt-20">Relizar Pedido</a>
+                                <p>Elige una cuenta para realizar la transferencia bancaria:</p>
+                                <RadioButtons   orientation='V'
+                                                element={
+                                                {
+                                                    key: 'cuentasBancarias',
+                                                    items:  
+                                                    [
+                                                        {id: 1, value: 'BBVA - 0011-0426-0100005960 - CCI: 11-0011-0426-0100005960'}, 
+                                                        {id: 2, value: 'BCP  - 193-1853946-0-25     - CCI: 14-193-1853946-0-25'},
+                                                        {id: 2, value: 'SBS  - 00-046-021886        - CCI: 16-00-046-021886'}                                        
+                                                    ]
+                                                }}/>       
+                                                                                         
+                                <a href="#" className="btn btn-main mt-20">Relizar Pedido</a>
                             </div>
                         </div>
                     </div>

@@ -2,7 +2,9 @@ import PaginaCarroCompras from "../Pages/Ecommerce/PaginaCarroCompras";
 import PaginaCatalogoProductos from "../Pages/Ecommerce/PaginaCatalogoProductos";
 import PaginaDetalleProducto from "../Pages/Ecommerce/PaginaDetalleProducto";
 import PaginaInicio from "../Pages/Ecommerce/PaginaInicio";
+import PaginaMiCuenta from "../Pages/Ecommerce/PaginaMiCuenta";
 import PaginaPagarCompra from "../Pages/Ecommerce/PaginaPagarCompra";
+import PaginaNoEncontrada from "../Pages/PaginaNoEncontrada";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: LayoutEcommerce } = require("../Pages/LayoutEcommerce");
@@ -12,7 +14,7 @@ const rutas = createBrowserRouter(
         {
             path: '/',
             element: <LayoutEcommerce />,
-            errorElement: <h1>Error</h1>,
+            errorElement: <PaginaNoEncontrada/>,
             children: [
                 {
                     path: '/',
@@ -33,7 +35,11 @@ const rutas = createBrowserRouter(
                 {
                     path: 'pagos',
                     element: <PaginaPagarCompra />
-                },                                                     
+                },    
+                {
+                    path: 'miCuenta',
+                    element: <PaginaMiCuenta />
+                },                                                                    
             ]
         }   
     ]);

@@ -1,0 +1,28 @@
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+    color: #fff;
+    background-color: #000;
+  }
+
+  .nav-tabs {
+    border: 0px;
+    margin-left: calc(30%);
+  }
+  
+  @media (max-width: 768px) {
+    .nav-tabs {
+        border: 0px;
+        margin-left: calc(20%);
+      }
+  }
+  @media (max-width: 480px) {
+    .nav-tabs {
+        border: 0px;
+        margin-left: calc(20%);
+      }
+  }
+  @media (max-width: 400px) {
+    .nav-tabs {
+        border: 0px;
+        margin-left: calc(20%);
+      }
+  }

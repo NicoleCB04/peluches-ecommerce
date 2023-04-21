@@ -21,7 +21,7 @@ export default function ResumenPedido() {
                                 })
                             }
                             <div className="discount-code">
-                                <p>Tiene descuento? <a data-toggle="modal" data-target="#coupon-modal" href="#!">ingréselo aquí </a></p>
+                                {/* <p>Tiene descuento? <a data-toggle="modal" data-target="#coupon-modal" href="#!">ingréselo aquí </a></p> */}
                             </div>
                             <ul className="summary-prices">
                                 <li>
