@@ -1,3 +1,4 @@
+import Modal from "../Modals/Modal"
 
 
 export default function TablePedidos({ mode = 'Dashboard', pedidos }) {
@@ -77,6 +78,10 @@ export default function TablePedidos({ mode = 'Dashboard', pedidos }) {
                         </table>
                     </div>
             }
+
+            <Modal />
+
+            <Modal />
         </>
     )
 }

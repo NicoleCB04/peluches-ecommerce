@@ -33,8 +33,10 @@ export default function CardNavCarrito() {
                             </div>
                             <ul className="text-center cart-buttons">
                                 <li><Link to={'/carrito'} className="btn btn-small">Ver Carrito</Link></li>
-                                &nbsp;
-                                <li><a href="checkout.html" className="btn btn-small btn-solid-border">Comprar</a></li>
+                                &nbsp;                                                                
+                                <li>
+                                    <Link to={'/pagos'} className="btn btn-small btn-solid-border">Comprar</Link>
+                                </li>
                             </ul>                        
                         </> :  <h4>Sin productos en el carrito</h4>
                     }

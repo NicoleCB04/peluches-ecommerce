@@ -7,7 +7,7 @@ import { useModal } from "../../Hooks/useModal";
 import { Link } from "react-router-dom";
 
 export default function ListaProductos({productsData, columnWidth, numberElements}) {
-    const { productDetails, handleModaProductDetails }  = useContext(CarritoContext) 
+    const { productDetails, handleModaProductDetails, handleAddShoppingCart }  = useContext(CarritoContext) 
     const [isOpenModalProductDetail, openModalProductDetail, closeModalProductDetail] = useModal(false); 
 
     const viewModalProduct = (productView) => {
@@ -58,7 +58,22 @@ export default function ListaProductos({productsData, columnWidth, numberElement
                             <p className="product-short-description">
                                 {productDetails.descripcion}
                             </p>
-                            <a href="/Ecommerce/CarroCompras" className="btn btn-main">Agregar al Carrito</a>
+                            <Link to={'/carrito'} 
+                                    className="btn btn-main" 
+                                    onClick={() => handleAddShoppingCart({cargo: 0}, {                                           
+                                        idProducto: productDetails.idProducto,
+                                        descripcionProducto: productDetails.nombreProducto,
+                                        urlImagen: productDetails.linkImagen,
+                                        precio: productDetails.precioVenta,
+                                        cantidad: 1,
+                                        enPromocion: false,
+                                        descuento: 0,
+                                        subTotal:0,
+                                        total: 0,
+                                        activo: true        
+                                    })}>
+                                        Agregar al Carrito
+                            </Link>                            
                             <Link to={`/detalleProducto/${productDetails.idProducto}`}                                
                                 className="btn btn-transparent">Ver detalles del Producto</Link>
                         </div>

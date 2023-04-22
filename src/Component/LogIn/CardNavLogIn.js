@@ -40,7 +40,7 @@ export default function CardNavLogIn() {
                     <ul className="cart-menus-login dropdown-menu">
                         <li><a href="#" onClick={() => openModalLogIn()}>Inicia Sesión</a></li>
                         <li><a href="#" onClick={() => openModalSignIn()}>Regístrate</a></li>
-                        <li><a href="#">Mi Cuenta</a></li>
+                        <li><Link to={'/miCuenta'}>Mi Cuenta</Link></li>
                     </ul>
                 </div>
             </li>

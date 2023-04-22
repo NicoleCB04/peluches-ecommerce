@@ -4,6 +4,7 @@ import { Component } from "react";
 import primerSlider from '../../Assets/Images/slider/slider-1.jpg';
 import segundoSlider from '../../Assets/Images/slider/slider-2.jpg';
 import tercerSlider from '../../Assets/Images/slider/slider-3.jpg';
+import { Link } from "react-router-dom";
 
 class BannerBar extends Component{
 
@@ -25,7 +26,7 @@ class BannerBar extends Component{
                             <div className="carousel-caption">
                                 <p>PRODUCTOS</p>                            
                                 <h3>La belleza de la naturaleza <br/> está escondido en los detalles.</h3>
-                                <a className="btn btn-info" href="#">Compra Ahora</a>
+                                <Link to={'/catalogo'} className="btn btn-info" >Compra Ahora</Link>
                             </div>                        
                         </div>
                         <div className="item">
@@ -33,7 +34,7 @@ class BannerBar extends Component{
                             <div className="carousel-caption">
                                 <p>PRODUCTOS</p>
                                 <h3>La belleza de la naturaleza <br /> está escondido en los detalles.</h3>
-                                <a className="btn btn-info" href="#">Compra Ahora</a>
+                                <Link to={'/catalogo'} className="btn btn-info" >Compra Ahora</Link>
                             </div>                           
                         </div>
                         <div className="item">
@@ -41,7 +42,7 @@ class BannerBar extends Component{
                             <div className="carousel-caption">
                                 <p>PRODUCTOS</p>
                                 <h3>La belleza de la naturaleza <br /> está escondido en los detalles.</h3>
-                                <a className="btn btn-info" href="#">Compra Ahora</a>
+                                <Link to={'/catalogo'} className="btn btn-info" >Compra Ahora</Link>
                             </div>                           
                         </div>                        
                     </div>
